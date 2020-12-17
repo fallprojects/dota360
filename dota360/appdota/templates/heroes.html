@@ -1,0 +1,32 @@
+{% block content %}
+
+<form action="" method="GET">
+    {{ filter.form }}
+
+    <input type="submit" name="Confirm">
+</form>
+<table class="table table-dark table=dark">
+  <thead>
+    <tr>
+      <th scope="col">Image</th>
+      <th scope="col">Name</th>
+      <th scope="col">Attribute</th>
+      <th scope="col">Role</th>
+      <th scope="col">Tag</th>
+      <th scope="col">Skill</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr> >
+{% for hero in heroes %}
+<tr>
+    <td><img src="{{ hero.image.url }}" width="110px" height="80px"></td>
+    <td>{{ hero.name }}</td>
+    <td>{{ hero.atr }}</td>
+    <td>{{ hero.role }}</td>
+    <td>{{ hero.tag }}</td>
+    <td>{{ hero.skill }}</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}
