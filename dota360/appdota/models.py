@@ -32,11 +32,12 @@ class Hero(models.Model):
     )
 
     name = models.CharField(max_length=20)
-    hero_atr = models.CharField(max_length=40, choices=Attribute)
+    atr = models.CharField(max_length=40, choices=Attribute)
     role = MultiSelectField(max_choices=5, choices=Role)
-    hero_tag = MultiSelectField(max_choices=7, choices=Tag)
+    tag = MultiSelectField(max_choices=7, choices=Tag)
     skill = models.CharField(max_length=20, choices=Skill)
     image = models.ImageField(blank=True, default='default.png')
 
     def __str__(self):
         return self.name
+
