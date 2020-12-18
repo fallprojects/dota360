@@ -7,7 +7,7 @@ class heroFilter(FilterSet):
     class Meta:
         model = Hero
         fields = "__all__"
-        exclude = ['image','name',]
+        exclude = ['image','name','description','dotabuff']
 
     # class roleFilter(django_filters.FilterSet):
     #     q = django_filters.CharFilter(method='my_custom_filter')
