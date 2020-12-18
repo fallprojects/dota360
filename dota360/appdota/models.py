@@ -30,6 +30,10 @@ class Hero(models.Model):
         ('Average','Average'),
         ('Difficult','Difficult'),
     )
+    Team = (
+        ('Radiant','Radiant'),
+        ('Dire','Dire'),
+    )
 
     name = models.CharField(max_length=20)
     atr = models.CharField(max_length=40, choices=Attribute)
@@ -37,6 +41,10 @@ class Hero(models.Model):
     tag = MultiSelectField(max_choices=7, choices=Tag)
     skill = models.CharField(max_length=20, choices=Skill)
     image = models.ImageField(blank=True, default='default.png')
+    description = models.TextField()
+    team = models.CharField(max_length=10, choices=Team)
+    dotabuff = models.CharField(max_length=100)
+    build = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name
