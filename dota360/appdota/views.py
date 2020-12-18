@@ -14,3 +14,14 @@ def heroList(request):
     heroes = filter.qs
     context = {'heroes': heroes, 'filter': filter}
     return render(request, 'heroes.html', context)
+
+
+def heroInfo(request,hero_name):
+        try:
+            hero = Hero.objects.get(name=hero_name)
+        except Hero.DoesNotExist:
+            return HttpResponse('Theres no such hero.404')
+        context = {'hero': hero}
+        return render(request, 'hero-info.html', context)
+
+
