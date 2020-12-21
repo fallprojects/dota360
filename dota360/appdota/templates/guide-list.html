@@ -1,0 +1,14 @@
+<h><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"></h>
+<table class="table table-dark table=dark">
+<thead>
+  <tr>
+    <th>Hero</th>
+    <th>Name</th>
+  </tr>
+  {% for guide in guides %}
+  <tr>
+    <td scope="row"> <td><a href=" {% url 'guideview' guide.hero.name %}"><img src="{{ guide.hero.image.url }}" width="110px" height="80px"></a></td>
+  <td>{{ guide.hero.name }}</td>
+  </tr>
+{% endfor %}
+</thead>
