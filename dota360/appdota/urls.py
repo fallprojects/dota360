@@ -6,5 +6,7 @@ from .models import *
 urlpatterns = [
     path('heroes/',heroList,name='heroes'),
     path('heroinfo/<str:hero_name>/',heroInfo,name='heroinfo'),
-    # path('herobuild/',name='herobuild'),
+    path('createguide/',guideCreate,name='createguide'),
+    path('guides/',guideList,name='guides'),
+    path('guideview/<str:hero_name>/',guideView,name='guideview'),
 ]
