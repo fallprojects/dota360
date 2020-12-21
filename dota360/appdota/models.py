@@ -49,3 +49,12 @@ class Hero(models.Model):
     def __str__(self):
         return self.name
 
+class Guide(models.Model):
+
+    build = models.ImageField(blank=True,default='default.png')
+    build2 = models.ImageField(blank=True,default='default.png')
+    skillbuild = models.ImageField(blank=True,default='default.png')
+    hero = models.ForeignKey(Hero,on_delete=models.SET_NULL,null=True)
+
+    def __str__(self):
+        return self.hero.name
